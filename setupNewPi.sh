@@ -1,7 +1,11 @@
 #!/bin/bash
 
 
-sudo apt-get -y update && sudo apt-get -y upgrade
+git config --global user.email "Tim@..."
+git config --global user.name "tijoer"
+
+
+sudo apt-get -y update # && sudo apt-get -y upgrade
 
 sudo apt-get install \
 	vim \
@@ -13,6 +17,7 @@ which zsh
 
 chsh -s $(which zsh)
 
-curl -L http://install.ohmyz.sh | sh
+sudo curl -L http://install.ohmyz.sh | sh
+zsh
 
 
