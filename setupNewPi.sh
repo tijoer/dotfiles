@@ -13,6 +13,8 @@ sudo apt-get install \
 	vim \
        	zsh \
 	tree 
+	
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install btop
 wget -qO btop.tbz https://github.com/aristocratos/btop/releases/latest/download/btop-armv7l-linux-musleabihf.tbz
