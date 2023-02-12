@@ -14,8 +14,7 @@ sudo apt-get install \
        	zsh \
 	tree
 
-
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install btop
 wget -qO btop.tbz https://github.com/aristocratos/btop/releases/latest/download/btop-armv7l-linux-musleabihf.tbz
