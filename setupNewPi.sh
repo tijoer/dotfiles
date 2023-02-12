@@ -20,4 +20,5 @@ chsh -s $(which zsh)
 sudo curl -L http://install.ohmyz.sh | sh
 zsh
 
-
+wget -qO btop.tbz https://github.com/aristocratos/btop/releases/latest/download/btop-armv7l-linux-musleabihf.tbz
+sudo tar -xvf btop.tbz  -C /usr/local/bin --strip-components=3 ./btop/bin/btop
