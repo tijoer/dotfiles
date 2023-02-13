@@ -1,0 +1,28 @@
+#docker-compose up -d neovim
+#docker exec -it neovim /bin/bash
+version: '3.9'
+services:
+  neovim:
+    build: .
+    tty: true # create a tty to keep the container running until it gets manually terminated
+    command:
+      - /bin/sh
+      - -c
+      - |
+          echo "This container will copy your .ssh/id_rsa file into the container."
+          echo "foo4"
+          mkdir -p ~/.ssh/
+          cp /run/secrets/id_rsa ~/.ssh/id_rsa
+          cd /root 
+          git clone https://github.com/tijoer/dotfiles.git 
+          cd dotfiles 
+          chmod +x setupNewPi.sh 
+          ./setupNewPi.sh
+          /bin/bash
+    stdin_open: true
+    secrets:
+      - id_rsa
+
+secrets:
+  id_rsa:
+    file: ~/.ssh/id_rsa
