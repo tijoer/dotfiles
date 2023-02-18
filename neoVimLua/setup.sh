@@ -51,8 +51,8 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-#mkdir -p ~/.config/nvim/
-#ln .config/nvim/init.vim ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim
+ln -s ~/dotfiles/neoVimLua/.config/nvim ~/.config/nvim
 
 
 #nvim --headless '+PlugInstall --sync' +qa
