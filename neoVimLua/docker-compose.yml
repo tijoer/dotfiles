@@ -15,6 +15,7 @@ services:
           cd /root 
           git clone git@github.com:tijoer/dotfiles.git
           cd dotfiles 
+          git checkout new
           # chmod +x setupNewPi.sh 
           #./setupNewPi.sh
           #
