@@ -1,10 +1,9 @@
-#docker-containermpose up -d neovim
-#docker exec -it neovim /bin/bash
 version: '3.9'
 services:
   neovim:
     build: .
     tty: true # create a tty to keep the container running until it gets manually terminated
+              # Does not work if we run "command:".
     command:
       - /bin/sh
       - -c
@@ -16,18 +15,20 @@ services:
           cd /root 
           git clone https://github.com/tijoer/dotfiles.git 
           cd dotfiles 
-          chmod +x setupNewPi.sh 
-          git remote remove origin
-          git remote add origin git@github.com:tijoer/dotfiles.git
-          git branch --set-upstream-to=origin/main main
+          # chmod +x setupNewPi.sh 
           #./setupNewPi.sh
           #
-          #
+          # We want this container to stay open after it is started. An easy way is
+          # to start a bash and do nothing with this. If we delete this line the container
+          # will close after it is started. If we do not run the "command:" part of this yml
+          # file the container will stay open because of the "tty: true" line. But as we are
+          # running commands we need to open a shell as an easy fix.
           /bin/bash
     stdin_open: true
     secrets:
-      - id_rsa
+      - id_rsa # The secret can be found under /run/secrets/id_rsa in the running container.
 
 secrets:
   id_rsa:
     file: ~/.ssh/id_rsa
+

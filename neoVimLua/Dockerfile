@@ -28,9 +28,9 @@ RUN apt update \
 	zip \
 	unzip
 
+# These two layers are needed for the Neovim LSP plugins. We 
 RUN pip3 install pynvim
 RUN npm i -g neovim
-
 
 EXPOSE 22 8080 8081 8082 8083 8084 8085
 

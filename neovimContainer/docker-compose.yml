@@ -9,12 +9,15 @@ services:
       - /bin/sh
       - -c
       - |
+          # Copy the local id_rsa file into the container.
           echo "This container will copy your .ssh/id_rsa file into the container."
           echo "foo4"
           mkdir -p ~/.ssh/
           cp /run/secrets/id_rsa ~/.ssh/id_rsa
           cd /root 
-          git clone https://github.com/tijoer/dotfiles.git 
+          
+          # Clone Dotfiles and execute the setup script.
+          git clone 
           cd dotfiles 
           chmod +x setupNewPi.sh 
           ./setupNewPi.sh
