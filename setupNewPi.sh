@@ -10,8 +10,8 @@ sudo apt-get install \
 	curl \
 	-y
 
-source setupGit.sh
-source setupZshAndAliases.sh
+source scripts/setupGit.sh
+source scripts/setupZshAndAliases.sh
 
 # Install btop
 echo "Downloading and installing btop..."
@@ -20,7 +20,7 @@ sudo tar -xvf btop.tbz  -C /usr/local/bin --strip-components=3 ./btop/bin/btop
 rm btop.tbz
 
 # Trigger Neovim Install and setup
-source setupNeoVim.sh
+source scripts/setupNeoVim.sh
 
 # Start zsh
 echo "Starting zsh..."
