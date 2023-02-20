@@ -24,7 +24,7 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 
 echo "Creating a symbolic link to the nvim configuration dotfiles..."
 mkdir -p ~/.config/nvim/
-ln .config/nvim/init.vim ~/.config/nvim/init.vim
+#ln .config/nvim/init.vim ~/.config/nvim/init.vim
 
 #nvim --headless '+PlugInstall --sync' +qa
 #nvim --headless '+CocInstall coc-rust-analyzer --sync' +qa
