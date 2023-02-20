@@ -6,7 +6,7 @@ ENV LANG de_DE.utf8
 
 RUN apt update \
 	&& apt install -y \
-	openssh-server \
+	tmux \
 	sudo \
 	curl \
 	tree \
