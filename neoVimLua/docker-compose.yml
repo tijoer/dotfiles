@@ -13,7 +13,7 @@ services:
           mkdir -p ~/.ssh/
           cp /run/secrets/id_rsa ~/.ssh/id_rsa
           cd /root 
-          git clone https://github.com/tijoer/dotfiles.git 
+          git clone git@github.com:tijoer/dotfiles.git
           cd dotfiles 
           # chmod +x setupNewPi.sh 
           #./setupNewPi.sh
