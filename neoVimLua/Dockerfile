@@ -1,9 +1,5 @@
 FROM rust:1.67-bullseye
 
-##RUN sed -i 's/^# *\(en_US.UTF-8\|de_DE.UTF-8\)/\1/' /etc/locale.gen && \
-#        locale-gen
-ENV LANG de_DE.utf8
-
 RUN apt update \
 	&& apt install -y \
 	tmux \
@@ -26,7 +22,11 @@ RUN apt update \
 	g++ \
 	pkg-config \
 	zip \
-	unzip
+	unzipi \
+	locale
+
+RUN sed -i 's/^# *\(en_US.UTF-8\|de_DE.UTF-8\)/\1/' /etc/locale.gen && locale-gen
+ENV LANG de_DE.utf8
 
 # These two layers are needed for the Neovim LSP plugins. We 
 RUN pip3 install pynvim
