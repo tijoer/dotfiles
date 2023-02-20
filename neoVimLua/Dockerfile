@@ -25,8 +25,10 @@ RUN apt update \
 	unzipi \
 	locale
 
-RUN sed -i 's/^# *\(en_US.UTF-8\|de_DE.UTF-8\)/\1/' /etc/locale.gen && locale-gen
+#RUN sed -i 's/^# *\(en_US.UTF-8\|de_DE.UTF-8\)/\1/' /etc/locale.gen && locale-gen
 ENV LANG de_DE.utf8
+ENV LANGUAGE de_DE:de  
+ENV LC_ALL de_DE.UTF-8    
 
 # These two layers are needed for the Neovim LSP plugins. We 
 RUN pip3 install pynvim
