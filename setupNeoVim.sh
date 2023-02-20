@@ -23,8 +23,9 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 #	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo "Creating a symbolic link to the nvim configuration dotfiles..."
-mkdir -p ~/.config/nvim/
-ln -s ~/dotfiles/.config/nvim .config/nvim
+mkdir -p ~/.config
+rm -rf ~/.config/nvim || true
+ln -s ~/dotfiles/.config/nvim ~/.config/
 
 #nvim --headless '+PlugInstall --sync' +qa
 #nvim --headless '+CocInstall coc-rust-analyzer --sync' +qa
