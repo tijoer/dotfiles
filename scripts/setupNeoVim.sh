@@ -33,3 +33,8 @@ ln -s ~/dotfiles/.config/nvim ~/.config/
 #nvim --headless '+PlugInstall --sync' +qa
 #nvim --headless '+CocInstall coc-rust-analyzer --sync' +qa
 
+# Install win32yank into the bin folder to make neovim integration withing WSL possible.
+curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/
