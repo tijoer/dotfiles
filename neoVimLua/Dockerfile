@@ -36,3 +36,4 @@ RUN echo "export PATH=/root/.local/bin:$PATH" >> ~/.zshenv
 EXPOSE 22 8080 8081 8082 8083 8084 8085
 
 WORKDIR /root
+
