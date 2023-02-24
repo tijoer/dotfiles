@@ -23,3 +23,8 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 vim.keymap.set("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = true }))<cr>")
 vim.keymap.set("n", "<c-t>", "<cmd>Telescope live_grep<cr>")
+
+-- vim.cmd('nnoremap <C-n> :NvimTreeToggle<CR>')
+-- vim.cmd('nnoremap <C-f> :NvimTreeFocus<CR>')
+--vim.cmd('nnoremap <leader>e :NvimTreeToggle<CR>')
+vim.cmd('nnoremap <leader>e :NvimTreeFocus<CR>')
