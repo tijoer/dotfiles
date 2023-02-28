@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -i ~/.config/nvim
+rm ~/.config/nvim
 unlink ~/.oh-my-zsh/custom/docker.zsh

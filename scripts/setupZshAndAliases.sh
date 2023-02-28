@@ -12,7 +12,7 @@ sudo chsh -s $(which zsh)
 echo "Installing ohmyzsh"
 sudo curl -L http://install.ohmyz.sh | sh
 
-# Activate personal aliasesA
+# Activate personal aliases
 echo "Creating links for personal ZSH aliases..."
-ln .oh-my-zsh/custom/docker.zsh ~/.oh-my-zsh/custom/docker.zsh
+ln ~/dotfiles/.oh-my-zsh/custom/docker.zsh ~/.oh-my-zsh/custom/docker.zsh
 
