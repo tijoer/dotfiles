@@ -10,4 +10,4 @@ alias dke='docker exec -it'
 
 alias dkcl='docker container ls -a'
 
-alias dkil='docker images ls -a'
+alias dkil='docker image ls -a'
