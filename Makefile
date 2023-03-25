@@ -2,26 +2,6 @@
 # #HOMEFILES := $(shell ls -A home)
 # #DOTFILES := $(addprefix $(HOME)/,$(HOMEFILES))
 
-# .DEFAULT_GOAL := help
-
-# .DEFAULT_GOAL := help
-# .PHONY: all allinstall nextinstall allupdate allbackup list
-
-# deb-packages:
-# 	grep "^[^#;]" .debian_packages.conf | xargs sudo apt -y install
-
-# help:
-# 	@echo foo
-# 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
-# 	| sort \
-# 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
-
-
-# list:
-#     @LC_ALL=C $(MAKE) -pRrq -f $(firstword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/(^|\n)# Files(\n|$$)/,/(^|\n)# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
-
-
 .DEFAULT_GOAL := help
 .PHONY: help deb-packages
 
