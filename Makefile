@@ -26,12 +26,12 @@
 .PHONY: help deb-packages
 
 init:
-ifneq ($(shell id -u), 0)
-	@echo "You must be root to perform this action."
-else
-	@echo "TODO: The action when the user is root here..."
-	apt update
-endif
+# ifneq ($(shell id -u), 0)
+# 	@echo "You must be root to perform this action."
+# else
+# 	@echo "TODO: The action when the user is root here..."
+# 	apt update
+# endif
 
 # btop: 
 # 	{ \
