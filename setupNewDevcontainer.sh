@@ -1,9 +1,7 @@
 #!/bin/bash
 
-sudo apt-get install \
-	tree \
-	bat \
-	-y
+# Install all packages
+grep "^[^#;]" .debian-packages.conf | xargs sudo apt -y install
 
 # Install btop
 echo "Downloading and installing btop..."
