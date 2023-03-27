@@ -16,7 +16,7 @@ fi
 grep -vE "^\s*#" debian_packages.conf | xargs sudo apt install -y
 
 source scripts/setupZshAndAliases.sh
-# source scripts/setupNeoVim.sh
+source scripts/setupNeoVim.sh
 # source scripts/setupBtop.sh
 source scripts/setupLocale.sh
 

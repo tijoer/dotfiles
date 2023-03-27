@@ -29,7 +29,7 @@ sudo npm i -g neovim
 
 #nvim --headless '+PlugInstall --sync' +qa
 #nvim --headless '+CocInstall coc-rust-analyzer --sync' +qa
-nvim --headless +PackerSync +qall
+#nvim --headless +PackerSync +qall
 
 # Install win32yank into the bin folder to make neovim integration withing WSL possible.
 sudo apt-get install -y unzip
