@@ -1,1 +1,1 @@
-alias cat='bat --paging=never'
+alias cat='batcat --paging=never'

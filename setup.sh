@@ -15,14 +15,14 @@ fi
 # Install all packages from debian_packages.conf
 grep -vE "^\s*#" debian_packages.conf | xargs sudo apt install -y
 
-# Use stow to symlink all dotfiles. Loops through directories in the current directory
-# More config for stow can be found in the .stowrc and .stow-local-ignore files.
-for d in *(/); stow -v -t ~/ -S $d
-
 source scripts/setupZshAndAliases.sh
 # source scripts/setupNeoVim.sh
 # source scripts/setupBtop.sh
 source scripts/setupLocale.sh
+
+# Use stow to symlink all dotfiles. Loops through directories in the current directory
+# More config for stow can be found in the .stowrc and .stow-local-ignore files.
+for d in */ ; do stow -v -t ~/ -S $d ; done
 
 # Start a new zsh shell so that the new aliases are available
 echo "Starting zsh..."

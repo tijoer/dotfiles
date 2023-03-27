@@ -1,4 +1,5 @@
 --verbose=1
 --no-folding
 --target=~/
--v
+--ignore scripts
+--simulate
