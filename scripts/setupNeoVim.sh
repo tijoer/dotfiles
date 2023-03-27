@@ -18,7 +18,7 @@ echo "Install new NodeJs version..."
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 	sudo apt-get install -y nodejs
 
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 pip3 install pynvim
 sudo npm i -g neovim
 

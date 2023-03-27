@@ -16,4 +16,3 @@ ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/maste
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 sed -i 's/ZSH_THEME="devcontainers"/ZSH_THEME="agnoster"/g' ~/.zshrc
 
-Activate personal aliases
