@@ -1,0 +1,9 @@
+[user]
+	email = Tim@...
+	name = tijoer
+[pull]
+	rebase = false
+[core]
+	editor = vim
+[color]
+    ui = auto

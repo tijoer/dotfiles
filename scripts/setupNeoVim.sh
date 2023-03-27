@@ -18,21 +18,15 @@ echo "Install new NodeJs version..."
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 	sudo apt-get install -y nodejs
 
+sudo apt install -y python3-pip
 pip3 install pynvim
 sudo npm i -g neovim
 
-## Install vim-plug as a plugin manager
-#sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-#	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-echo "Creating a symbolic link to the nvim configuration dotfiles..."
-mkdir -p ~/.config
-rm -rf ~/.config/nvim || true
-ln -s ~/dotfiles/.config/nvim ~/.config/
-
-#nvim --headless '+PlugInstall --sync' +qa
-#nvim --headless '+CocInstall coc-rust-analyzer --sync' +qa
-nvim --headless +PackerSync +qall
+# Packer seems to fail the first time. Run it again. This is due to the fact that Packer can not handle --headless mode.
+# There is some discussion on Github regarding the issue, but no solution yet. This works well enough, otherwise we would
+# need to run :PackerSync manually after the first run and get bombarded with error messages until then.
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'silent PackerSync' 2&> /dev/null || true
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'silent PackerSync' 2&> /dev/null || true 
 
 # Install win32yank into the bin folder to make neovim integration withing WSL possible.
 sudo apt-get install -y unzip
