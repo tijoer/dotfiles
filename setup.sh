@@ -20,7 +20,9 @@ source scripts/setupZshAndAliases.sh
 # source scripts/setupBtop.sh
 source scripts/setupLocale.sh
 
-stow -v -t ~/ -S .
+stow -v -t ~/ -S git
+stow -v -t ~/ -S neovim
+stow -v -t ~/ -S oh-my-zsh
 
 # Start a new zsh shell so that the new aliases are available
 echo "Starting zsh..."
