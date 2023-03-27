@@ -15,26 +15,15 @@ fi
 # Install all packages from debian_packages.conf
 grep -vE "^\s*#" debian_packages.conf | xargs sudo apt install -y
 
-# # Install btop
-# echo "Downloading and installing btop..."
-# wget -qO btop.tbz https://github.com/aristocratos/btop/releases/latest/download/btop-armv7l-linux-musleabihf.tbz
-# sudo tar -xvf btop.tbz -C /usr/local/bin --strip-components=3 ./btop/bin/btop
-# rm btop.tbz
+# Use stow to symlink all dotfiles. Loops through directories in the current directory
+# More config for stow can be found in the .stowrc and .stow-local-ignore files.
+for d in *(/); stow -v -t ~/ -S $d
 
-# source scripts/setupGit.sh
-# source scripts/setupZshAndAliases.sh
+source scripts/setupZshAndAliases.sh
 # source scripts/setupNeoVim.sh
-
-# Update locale and set language settings to english
-sudo apt-get install -y locales locales-all
-sudo locale-gen en_US.UTF-8
+# source scripts/setupBtop.sh
+source scripts/setupLocale.sh
 
 # Start a new zsh shell so that the new aliases are available
 echo "Starting zsh..."
 zsh
-
-
-#install.zsh
-#!/usr/bin/env zsh
-
-# for d in *(/); stow -v -t ~/ -S $d
