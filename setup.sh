@@ -23,15 +23,15 @@ grep -vE "^\s*#" debian_packages.conf | xargs sudo apt install -y
 
 # source scripts/setupGit.sh
 # source scripts/setupZshAndAliases.sh
-# #source scripts/setupNeoVim.sh
+# source scripts/setupNeoVim.sh
 
-# # Update locale and set language settings to english
-# sudo apt-get install -y locales locales-all
-# sudo locale-gen en_US.UTF-8
+# Update locale and set language settings to english
+sudo apt-get install -y locales locales-all
+sudo locale-gen en_US.UTF-8
 
-# # Start a new zsh shell so that the new aliases are available
-# echo "Starting zsh..."
-# zsh
+# Start a new zsh shell so that the new aliases are available
+echo "Starting zsh..."
+zsh
 
 
 #install.zsh
