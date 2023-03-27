@@ -19,9 +19,8 @@ More complex setups are moved into the scripts folder.
 ## Copy this for a quick installation.
 
 ```bash
-apt install sudo
 git clone https://github.com/tijoer/dotfiles.git
 cd dotfiles
-sudo ./setup.sh
+./setup.sh
 ```
 
