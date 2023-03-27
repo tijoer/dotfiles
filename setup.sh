@@ -16,13 +16,14 @@ fi
 grep -vE "^\s*#" debian_packages.conf | xargs sudo apt install -y
 
 source scripts/setupZshAndAliases.sh
-source scripts/setupNeoVim.sh
 # source scripts/setupBtop.sh
 source scripts/setupLocale.sh
 
 stow -v -t ~/ -S git
 stow -v -t ~/ -S neovim
 stow -v -t ~/ -S oh-my-zsh
+
+source scripts/setupNeoVim.sh # This needs to be done after stowing the neovim config
 
 # Start a new zsh shell so that the new aliases are available
 echo "Starting zsh..."
