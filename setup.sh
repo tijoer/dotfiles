@@ -20,9 +20,7 @@ source scripts/setupZshAndAliases.sh
 # source scripts/setupBtop.sh
 source scripts/setupLocale.sh
 
-# Use stow to symlink all dotfiles. Loops through directories in the current directory
-# More config for stow can be found in the .stowrc and .stow-local-ignore files.
-for d in */ ; do stow -v -t ~/ -S $d ; done
+stow -v -t ~/ -S .
 
 # Start a new zsh shell so that the new aliases are available
 echo "Starting zsh..."

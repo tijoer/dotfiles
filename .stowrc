@@ -1,5 +1,2 @@
 --verbose=1
---no-folding
 --target=~/
---ignore scripts
---simulate
