@@ -19,9 +19,11 @@ source scripts/setupZshAndAliases.sh
 # source scripts/setupBtop.sh
 source scripts/setupLocale.sh
 
-stow -v -t ~/ -S git
-stow -v -t ~/ -S neovim
-stow -v -t ~/ -S oh-my-zsh
+stow -t ~/ -S git
+stow -t ~/ -S neovim
+stow -t ~/ -S oh-my-zsh
+rm ~/.zshrc && stow -t ~/ -S zsh
+
 
 source scripts/setupNeoVim.sh # This needs to be done after stowing the neovim config
 
