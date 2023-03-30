@@ -5,8 +5,8 @@
 # commands between root and non-root users.
 # We will also run apt update, as it is not guaranteed that the container is up to date.
 if [ $USER = root ] ; then 
- 	apt update
-    apt install sudo
+	apt update
+	apt install sudo
 else
     # in this case sudo is already installed and we can just run apt update
     sudo apt update
@@ -28,7 +28,7 @@ stow -t ~/ -S oh-my-zsh
 rm ~/.zshrc && stow -t ~/ -S zsh
 
 
-#source scripts/setupNeoVim.sh # This needs to be done after stowing the neovim config
+source scripts/setupNeoVim.sh # This needs to be done after stowing the neovim config
 
 # Start a new zsh shell so that the new aliases are available
 echo "Starting zsh..."
