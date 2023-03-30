@@ -15,9 +15,12 @@ fi
 # Install all packages from debian_packages.conf
 grep -vE "^\s*#" debian_packages.conf | xargs sudo apt install -y
 
+# Setup everything that is more complex and needs it's own script or specialised command.
 source scripts/setupZshAndAliases.sh
-# source scripts/setupBtop.sh
+source scripts/setupBtop.sh
 source scripts/setupLocale.sh
+source scripts/setupGithubCli.sh
+source scripts/setupNodeAndNpm.sh
 
 stow -t ~/ -S git
 stow -t ~/ -S neovim
@@ -25,7 +28,7 @@ stow -t ~/ -S oh-my-zsh
 rm ~/.zshrc && stow -t ~/ -S zsh
 
 
-source scripts/setupNeoVim.sh # This needs to be done after stowing the neovim config
+#source scripts/setupNeoVim.sh # This needs to be done after stowing the neovim config
 
 # Start a new zsh shell so that the new aliases are available
 echo "Starting zsh..."
