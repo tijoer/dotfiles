@@ -4,7 +4,7 @@
 # We will install sudo first, so that we do not have to distinguish in the following
 # commands between root and non-root users.
 # We will also run apt update, as it is not guaranteed that the container is up to date.
-if [ $USER = root ] ; then 
+if [[ "$(id -u)" -eq 0 ]] ; then # The current user is root
 	apt update
 	apt install sudo
 else
