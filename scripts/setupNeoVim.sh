@@ -27,10 +27,10 @@ echo "Installing universal ctags..."
 sudo apt-get install -y universal-ctags #needed vor vim tagbar plugin. unictags has rust support. Exuberant-ctags does not have good Rust support.
 #sudo apt-get -y install exuberant-ctags        # needed for vim tagbar plugin
 
-echo "Install new NodeJs version..."
-# Needed for many plugins in Neovim
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-        sudo apt-get install -y nodejs
+# echo "Install new NodeJs version..."
+# # Needed for many plugins in Neovim
+# curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+#         sudo apt-get install -y nodejs
 
 sudo apt install -y python3-pip
 pip3 install pynvim
