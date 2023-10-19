@@ -3,8 +3,9 @@ alias dkpa='docker ps -a'
 
 alias dkk='docker kill'
 
-# kill and delete all
-alias dkka='docker rm $(docker kill $(docker ps -aq))' 
+# kill and delete all; 
+alias dkka='docker rm $(docker kill $(docker ps -aq))'
+alias dksp='docker system prune -f ; docker volume prune -f ;docker rm -f -v $(docker ps -q -a)'
 
 alias dke='docker exec -it'
 
