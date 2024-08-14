@@ -10,7 +10,9 @@ sudo chsh -s $(which zsh)
 # Install Oh My ZSH
 echo "Installing ohmyzsh"
 rm -rf ~/.oh-my-zsh
-ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+#ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+DEBIAN_FRONTEND=noninteractive sudo apt-get install -y zsh && ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 
 # Update theme in zshrc
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
