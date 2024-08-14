@@ -17,10 +17,10 @@ grep -vE "^\s*#" debian_packages.conf | xargs sudo apt install -y
 
 # Setup everything that is more complex and needs it's own script or specialised command.
 source scripts/setupZshAndAliases.sh
-source scripts/setupBtop.sh
-source scripts/setupLocale.sh
+# source scripts/setupBtop.sh
+# source scripts/setupLocale.sh
 source scripts/setupGithubCli.sh
-source scripts/setupNodeAndNpm.sh
+# source scripts/setupNodeAndNpm.sh
 
 stow -t ~/ -S git
 stow -t ~/ -S neovim
